@@ -67,10 +67,12 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        ls -al
 
     - name: Load custom feeds
       run: |
         pwd
+        ls -al
         # [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
@@ -135,7 +137,9 @@ jobs:
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: ${{ env.FIRMWARE }}
+        path: |
+          ${{ env.FIRMWARE }}
+          openwrt/.config
 
     - name: Generate release tag
       id: tag
