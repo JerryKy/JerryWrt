@@ -17,4 +17,4 @@ exit 0
 EOF
 
 # 自定义登录背景图片
-[ -e $GITHUB_WORKSPACE/img/bg1.jpg ] && mv $GITHUB_WORKSPACE/img/bg1.jpg package/feeds/luci/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+#[ -e $GITHUB_WORKSPACE/img/bg1.jpg ] && mv $GITHUB_WORKSPACE/img/bg1.jpg package/feeds/luci/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
