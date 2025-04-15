@@ -97,6 +97,9 @@ jobs:
       run: |
         cd openwrt
         make defconfig
+        echo "测试测试"
+        grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/'
+        cat .config
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
