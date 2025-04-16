@@ -94,13 +94,19 @@ jobs:
       id: package
       run: |
         cd openwrt
+        echo "openwrt目录"
+        ls -al
         make defconfig
-        echo "测试测试"
+        echo "defconfig后目录"
+        ls -al
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/'
         cat .config
+        cp .config test.config
+        echo "cp之后目录"
+        ls -al
 
     - name: Upload config
       uses: actions/upload-artifact@main
       with:
         name: config
-        path: openwrt/.config
+        path: openwrt/test.config
