@@ -44,7 +44,7 @@ jobs:
         sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
         sudo -E apt-get -qq update
         echo "安装mold"
-        sudo -E apt-get -qq install mold #测试
+        sudo -E apt-get -y install mold #测试
         echo "检查是否安装，以下为list"
         sudo apt list --installed
         echo "以上为list"
@@ -55,6 +55,8 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         echo "执行完脚本，再列一次list"
         sudo apt list --installed
+        echo "再安装一次mold"
+        sudo -E apt-get -y install mold
 
     - name: Combine Disks
       uses: easimon/maximize-build-space@master
