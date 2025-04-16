@@ -14,7 +14,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
-    - name: Load custom configuration
+    - name: test name
       run: |
         ls -al
         [ -e $CONFIG_FILE ] && cp $CONFIG_FILE .config
@@ -28,7 +28,17 @@ jobs:
         echo "DEVICE_NAME=_$(cat DEVICE_NAME)"
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
         echo "检测文件命令执行，尝试输出GITHUB_ENV"
-        echo "当前步骤验证：DEVICE_NAME = ${{ env.DEVICE_NAME }}"
+        echo "当前步骤验证：DEVICE_NAME = $DEVICE_NAME"
         echo "${{ env.DEVICE_NAME }}"
         echo "FILE_DATE=_$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
-        echo "${{ env.FILE_DATE }}"
+        echo "当前步骤验证：FILE_DATE = $FILE_DATE"
+
+    - name: Verify DEVICE_NAME
+      run: |
+       echo "后续步骤验证：DEVICE_NAME = ${{ env.DEVICE_NAME }}"
+       echo "后续步骤验证：FILE_DATE = $FILE_DATE"
+
+    - name: Verify DEVICE_NAME 2
+      run: |
+       echo "后续步骤验证：DEVICE_NAME = ${{ env.DEVICE_NAME }}"
+       echo "后续步骤验证：FILE_DATE = ${{ env.FILE_DATE }}"
