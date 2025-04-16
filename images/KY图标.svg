@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="图层_1"
+	xmlns:svg="http://www.w3.org/2000/svg"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256"
+	style="enable-background:new 0 0 256 256;" xml:space="preserve">
+	<style type="text/css">
+		.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#000000;}
+		.s1 { fill: #ff1854 } 
+		.s2 { mix-blend-mode: lighten;fill: #01ffff } 
+</style>
+	<g>
+		<g id="svg_1">
+			<path id="svg_2" class="st0" d="
+			M36.4,0.2h183.8c19.7,0,35.7,16,35.7,35.7v183.8c0,19.7-16,35.7-35.7,35.7H36.4c-19.7,0-35.7-16-35.7-35.7V35.9
+			C0.7,16.2,16.7,0.2,36.4,0.2z"/>
+			<path id="KY红" class="s1" aria-label="KY"  d="m81.7 178h-32v-10.7h10.6v-74.6h-10.6v-10.7h32v42.7h10.6v-21.4h10.7v-21.3h21.3v21.3h-10.6v21.4h-10.7v10.6h10.7v21.4h10.6v21.3h-21.3v-21.3h-10.7v-21.4h-10.6zm-3.4 0h-32v-10.6h10.7v-74.7h-10.7v-10.7h32v42.7h10.7v-21.3h10.6v-21.4h21.4v21.4h-10.7v21.3h-10.7v10.7h10.7v21.3h10.7v21.3h-21.4v-21.3h-10.6v-21.3h-10.7zm81.5-53.4h-10.7v-42.6h21.4v42.6h21.3v-42.6h21.3v42.6h-10.6v10.7h-10.7v32h10.7v10.7h-42.7v-10.7h10.7v-32h-10.7zm-3.4 0h-10.7v-42.7h21.4v42.7h21.3v-42.7h21.3v42.7h-10.6v10.7h-10.7v32h10.7v10.6h-42.7v-10.6h10.7v-32h-10.7z"/>
+			<path id="KY蓝" class="s2" aria-label="KY"  d="m77.8 174h-32v-10.7h10.7v-74.6h-10.7v-10.7h32v42.7h10.7v-21.4h10.7v-21.3h21.3v21.3h-10.7v21.4h-10.6v10.6h10.6v21.4h10.7v21.3h-21.3v-21.3h-10.7v-21.4h-10.7zm-3.3 0h-32v-10.6h10.6v-74.7h-10.6v-10.7h32v42.7h10.6v-21.3h10.7v-21.4h21.3v21.4h-10.6v21.3h-10.7v10.7h10.7v21.3h10.6v21.3h-21.3v-21.3h-10.7v-21.3h-10.6zm81.4-53.4h-10.6v-42.6h21.3v42.6h21.3v-42.6h21.4v42.6h-10.7v10.7h-10.7v32h10.7v10.7h-42.7v-10.7h10.7v-32h-10.7zm-3.3 0h-10.7v-42.7h21.3v42.7h21.4v-42.7h21.3v42.7h-10.7v10.7h-10.6v32h10.6v10.6h-42.6v-10.6h10.6v-32h-10.6z"/>
+		</g>
+	</g>
+</svg>
+
