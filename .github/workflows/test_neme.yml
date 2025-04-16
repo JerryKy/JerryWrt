@@ -48,3 +48,10 @@ jobs:
        echo "后续步骤验证：DEVICE_NAME = ${{ env.DEVICE_NAME }}"
        echo "后续步骤验证：FILE_DATE = ${{ env.FILE_DATE }}"
        echo "后续步骤验证：FILE_DATE = ${{ env.TARGET_NAME }}"
+
+    - name: Upload TEST
+      uses: actions/upload-artifact@main
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      with:
+        name: test${{ env.TARGET_NAME }}${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        path: TARGET_NAME
