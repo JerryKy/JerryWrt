@@ -41,6 +41,7 @@ jobs:
         sudo docker image prune --all --force
         sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
         sudo -E apt-get -qq update
+        sudo -E apt-get -qq install mold #测试
         sudo bash -c 'bash <(curl -sL https://build-scripts.immortalwrt.org/init_build_environment.sh)'
         sudo -E systemctl daemon-reload
         sudo -E apt-get -qq autoremove --purge
@@ -113,7 +114,7 @@ jobs:
 
     - name: Upload config
       uses: actions/upload-artifact@main
-      if: steps.compile.outputs.status != 'success'
+      #if: steps.compile.outputs.status != 'success'
       with:
         name: Failed_config${{ env.CONFIG_DATE }}
         path: openwrt/upload.config
