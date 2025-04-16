@@ -29,16 +29,22 @@ jobs:
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
         echo "检测文件命令执行，尝试输出GITHUB_ENV"
         echo "当前步骤验证：DEVICE_NAME = $DEVICE_NAME"
-        echo "${{ env.DEVICE_NAME }}"
         echo "FILE_DATE=_$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
         echo "当前步骤验证：FILE_DATE = $FILE_DATE"
+        echo "捕获架构名"
+        grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/^CONFIG_TARGET_(.*)_DEVICE_.*=y/\1/'
+        grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/^CONFIG_TARGET_(.*)_DEVICE_.*=y/\1/' > TARGET_NAME
+        [ -s TARGET_NAME ] && echo "TARGET_NAME=_$(cat TARGET_NAME)" >> $GITHUB_ENV
+        echo "当前步骤验证：DEVICE_NAME = $TARGET_NAME"
 
     - name: Verify DEVICE_NAME
       run: |
        echo "后续步骤验证：DEVICE_NAME = ${{ env.DEVICE_NAME }}"
-       echo "后续步骤验证：FILE_DATE = $FILE_DATE"
+       echo "后续步骤验证：FILE_DATE = ${{ env.FILE_DATE }}"
+       echo "后续步骤验证：FILE_DATE = ${{ env.TARGET_NAME }}"
 
     - name: Verify DEVICE_NAME 2
       run: |
        echo "后续步骤验证：DEVICE_NAME = ${{ env.DEVICE_NAME }}"
        echo "后续步骤验证：FILE_DATE = ${{ env.FILE_DATE }}"
+       echo "后续步骤验证：FILE_DATE = ${{ env.TARGET_NAME }}"
