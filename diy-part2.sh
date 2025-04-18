@@ -13,7 +13,7 @@ cat >>package/emortal/default-settings/files/99-default-settings-chinese<< EOF
 uci set luci.main.mediaurlbase='/luci-static/argon'
 uci commit luci
 
-uci set network.lan.ipaddr='192.168.50.132'
+uci set network.lan.ipaddr='192.168.50.131'
 uci commit network
 
 exit 0
