@@ -10,11 +10,16 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git package/feeds/luci/l
 # 修改默认设置
 sed -i '$d' package/emortal/default-settings/files/99-default-settings-chinese
 cat >>package/emortal/default-settings/files/99-default-settings-chinese<< EOF
+# 修改默认主题
 uci set luci.main.mediaurlbase='/luci-static/argon'
 uci commit luci
 
+# 修改默认地址
 uci set network.lan.ipaddr='192.168.50.131'
 uci commit network
+
+# 修改okpg源
+sed -i -E '/src\/gz immortalwrt_(jerry|lucky)/d' /etc/opkg/distfeeds.conf
 
 exit 0
 EOF
