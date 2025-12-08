@@ -5,3 +5,6 @@ echo 'src-git jerry https://github.com/JerryKy/Jerrywrt-packages.git' >>feeds.co
 
 # 添加lucky
 echo 'src-git lucky https://github.com/gdy666/luci-app-lucky.git' >>feeds.conf.default
+
+# 添加helloworld
+echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
