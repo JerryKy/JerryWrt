@@ -46,7 +46,7 @@ jobs:
         echo "安装mold"
         sudo -E apt-get -y install mold #测试
         echo "检查是否安装，以下为list"
-        sudo apt list --installed
+        sudo dpkg -l | grep mold
         echo "以上为list"
         sudo bash -c 'bash <(curl -sL https://build-scripts.immortalwrt.org/init_build_environment.sh)'
         sudo -E systemctl daemon-reload
@@ -54,7 +54,7 @@ jobs:
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
         echo "执行完脚本，再列一次list"
-        sudo apt list --installed
+        sudo dpkg -l | grep mold
         echo "再安装一次mold"
         sudo -E apt-get -y install mold
 
