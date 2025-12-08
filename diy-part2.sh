@@ -15,7 +15,7 @@ uci set luci.main.mediaurlbase='/luci-static/argon'
 uci commit luci
 
 # 修改默认地址
-uci set network.lan.ipaddr='192.168.50.131'
+uci set network.lan.ipaddr='192.168.50.60'
 uci commit network
 
 # 修改okpg源
