@@ -19,7 +19,7 @@ uci set network.lan.ipaddr='192.168.50.60'
 uci commit network
 
 # 修改okpg源
-sed -i -E '/src\/gz immortalwrt_(jerry|lucky)/d' /etc/opkg/distfeeds.conf
+sed -i -E '/src\/gz immortalwrt_(jerry|lucky|helloworld)/d' /etc/opkg/distfeeds.conf
 
 exit 0
 EOF
