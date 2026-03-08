@@ -24,6 +24,8 @@ sed -i -E '/src\/gz immortalwrt_(jerry|lucky|helloworld)/d' /etc/opkg/distfeeds.
 exit 0
 EOF
 
-# 自定义登录背景图片
-[ -e $GITHUB_WORKSPACE/images/bg1.jpg ] && mv $GITHUB_WORKSPACE/images/bg1.jpg package/feeds/luci/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
-[ -e $GITHUB_WORKSPACE/images/KY_icon.svg ] && mv $GITHUB_WORKSPACE/images/KY_icon.svg package/feeds/luci/luci-theme-argon/htdocs/luci-static/argon/img/argon.svg
+# 自定义登录背景图片、浏览器图标
+[ -e $GITHUB_WORKSPACE/images/favicon.ico ] && mv $GITHUB_WORKSPACE/images/favicon.ico package/feeds/luci/luci-theme-argon/htdocs/luci-static/argon/favicon.ico
+[ -e $GITHUB_WORKSPACE/images/img/bg1.jpg ] && mv $GITHUB_WORKSPACE/images/img/bg1.jpg package/feeds/luci/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+[ -e $GITHUB_WORKSPACE/images/img/argon.svg ] && mv $GITHUB_WORKSPACE/images/img/argon.svg package/feeds/luci/luci-theme-argon/htdocs/luci-static/argon/img/argon.svg
+[ -d $GITHUB_WORKSPACE/images/icon ] && mv $GITHUB_WORKSPACE/images/icon/*.png package/feeds/luci/luci-theme-argon/htdocs/luci-static/argon/icon/
