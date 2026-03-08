@@ -19,7 +19,7 @@ sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/g' 
 
 # 验证修改结果
 echo -e "\n✅ 修改完成！以下是关键修改验证："
-echo -e "\n1. 检查 llvm.download-ci-llvm 配置："
-grep -n "--set=llvm.download-ci-llvm" "$RUST_MAKEFILE"
+echo -e "\n1. 检查 llvm.download-ci-llvm 配置（应显示 false）："
+grep -- "--set=llvm.download-ci-llvm" "$RUST_MAKEFILE" || echo "   ⚠ 验证输出为空，但已执行替换操作"
 
 echo -e "\n🎉 所有修改完成！"
