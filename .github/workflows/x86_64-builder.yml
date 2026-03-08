@@ -104,6 +104,12 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
+    - name: Cancel download rust
+      run: |
+        chmod +x diy-part3.sh
+        cd openwrt
+        $GITHUB_WORKSPACE/diy-part3.sh
+
     - name: Compile the firmware
       id: compile
       run: |
