@@ -38,8 +38,18 @@ BASE_DIR="/home/runner/work/JerryWrt/JerryWrt/workdir/openwrt/build_dir/target-x
 CONFIG_FILE_NAME="bootstrap.toml"
 # ================================================
 
+# 新增：列出 host 文件夹内的所有内容（文件+目录）
+echo -e "===== [Step 0] 列出 $BASE_DIR 文件夹内的所有内容 ====="
+if [ -d "$BASE_DIR" ]; then
+  # 用 ls -la 列出详细信息（包括隐藏文件），更便于调试
+  ls -la "$BASE_DIR"
+else
+  echo "❌ 错误：基础目录不存在 → $BASE_DIR"
+  exit 1
+fi
+
 # 1. 自动查找以 rustc 开头的目录
-echo -e "===== [Step 1] 查找 $BASE_DIR 下以 rustc 开头的目录 ====="
+echo -e "\n===== [Step 1] 查找 $BASE_DIR 下以 rustc 开头的目录 ====="
 RUSTC_DIRS=($(find "$BASE_DIR" -maxdepth 1 -type d -name "rustc*" | sort))
 
 # 检查是否找到 rustc 目录
